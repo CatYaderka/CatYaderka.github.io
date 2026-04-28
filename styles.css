@@ -7,7 +7,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background: #0a0a0a;
-    color: #ddd; /* не чисто белый */
+    color: #ddd;
     line-height: 1.6;
     padding: 2rem 1rem;
 }
@@ -85,7 +85,7 @@ body {
     margin-top: 0.3rem;
 }
 
-/* Соцсети */
+/* Социальные ссылки */
 .social-links {
     display: flex;
     gap: 1rem;
@@ -263,7 +263,7 @@ h3 {
     box-shadow: 0 0 10px rgba(255,102,0,0.3);
 }
 
-/* ROAD MAP — новая стилизация */
+/* ROAD MAP — без иконок, адаптивный */
 .roadmap h3 {
     margin-bottom: 2rem;
 }
@@ -277,14 +277,14 @@ h3 {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 }
 
-/* Линия времени вертикальная */
+/* Вертикальная линия */
 .timeline::before {
     content: '';
     position: absolute;
-    left: 28px;
+    left: 8px;
     top: 0;
     bottom: 0;
     width: 3px;
@@ -318,29 +318,25 @@ h3 {
     }
 }
 
-.timeline-icon {
-    width: 48px;
-    height: 48px;
-    background: #1a1a1a;
+/* Маркер без иконки — просто кружок */
+.timeline-marker-no-icon {
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #555;
     margin-right: 1.5rem;
+    margin-left: 0;
+    position: relative;
     z-index: 2;
-    border: 2px solid #333;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
     transition: 0.2s;
-}
-
-.timeline-icon i {
-    font-size: 1.3rem;
-    color: #aaa;
 }
 
 .timeline-content {
     background: rgba(17, 17, 17, 0.8);
     backdrop-filter: blur(2px);
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.2rem;
     border-radius: 1rem;
     flex: 1;
     border: 1px solid #2a2a2a;
@@ -367,19 +363,15 @@ h3 {
     letter-spacing: 0.5px;
 }
 
-/* Текущий этап (оранжевый с эффектом свечения) */
-.timeline-item.current .timeline-icon {
+/* Текущий этап (оранжевый) */
+.timeline-item.current .timeline-marker-no-icon {
     background: #ff6600;
-    border-color: #ffaa66;
-    box-shadow: 0 0 15px #ff6600;
-}
-.timeline-item.current .timeline-icon i {
-    color: #0a0a0a;
+    box-shadow: 0 0 0 3px rgba(255,102,0,0.4);
 }
 .timeline-item.current .timeline-content {
     border-color: #ff6600;
     background: linear-gradient(135deg, rgba(255,102,0,0.1), rgba(17,17,17,0.9));
-    box-shadow: 0 0 15px rgba(255,102,0,0.2);
+    box-shadow: 0 0 12px rgba(255,102,0,0.2);
 }
 .timeline-item.current .timeline-content h4 {
     color: #ffaa66;
@@ -387,13 +379,9 @@ h3 {
 }
 
 /* Следующий этап (отмечен) */
-.timeline-item.next .timeline-icon {
+.timeline-item.next .timeline-marker-no-icon {
     background: #cc8800;
-    border-color: #ffcc44;
-    box-shadow: 0 0 8px rgba(255,204,0,0.5);
-}
-.timeline-item.next .timeline-icon i {
-    color: #0a0a0a;
+    box-shadow: 0 0 0 2px rgba(204,136,0,0.6);
 }
 .timeline-item.next .timeline-content {
     border-color: #cc8800;
@@ -403,13 +391,9 @@ h3 {
     color: #ffcc66;
 }
 
-/* Прошедшие этапы (серые, но текст не белый) */
-.timeline-item.past .timeline-icon {
-    background: #2a2a2a;
-    border-color: #444;
-}
-.timeline-item.past .timeline-icon i {
-    color: #666;
+/* Прошедшие этапы (серые) */
+.timeline-item.past .timeline-marker-no-icon {
+    background: #444;
 }
 .timeline-item.past .timeline-content {
     opacity: 0.8;
@@ -418,13 +402,9 @@ h3 {
     color: #888;
 }
 
-/* Будущие этапы (более тёмные) */
-.timeline-item.future .timeline-icon {
-    background: #1a1a1a;
-    border-color: #333;
-}
-.timeline-item.future .timeline-icon i {
-    color: #555;
+/* Будущие этапы */
+.timeline-item.future .timeline-marker-no-icon {
+    background: #333;
 }
 .timeline-item.future .timeline-content {
     border-color: #2a2a2a;
@@ -434,7 +414,7 @@ h3 {
     color: #999;
 }
 
-/* Адаптив */
+/* Адаптация под телефоны (как на главной) */
 @media (max-width: 700px) {
     .container {
         padding: 1rem;
@@ -449,25 +429,32 @@ h3 {
     .social-links {
         justify-content: center;
     }
+    .project-card.expanded .project-image {
+        height: 200px;
+    }
+    .project-card.expanded .project-info {
+        padding: 1rem;
+    }
     .timeline {
-        margin-left: 0;
+        margin-left: 0.5rem;
     }
     .timeline::before {
-        left: 20px;
+        left: 8px;
     }
-    .timeline-icon {
-        width: 36px;
-        height: 36px;
+    .timeline-marker-no-icon {
+        width: 12px;
+        height: 12px;
         margin-right: 1rem;
-    }
-    .timeline-icon i {
-        font-size: 1rem;
+        margin-top: 0.6rem;
     }
     .timeline-content {
         padding: 0.8rem 1rem;
     }
-    .project-card.expanded .project-image {
-        height: 200px;
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+    .timeline-content p {
+        font-size: 0.8rem;
     }
 }
 
