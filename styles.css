@@ -263,49 +263,28 @@ h3 {
     box-shadow: 0 0 10px rgba(255,102,0,0.3);
 }
 
-/* ROAD MAP — без маркеров, адаптивный */
-.roadmap h3 {
-    margin-bottom: 2rem;
-}
-
-.timeline-container {
-    position: relative;
-    padding: 1rem 0;
-}
-
-.timeline {
+/* ROAD MAP — без полоски и маркеров, просто список */
+.roadmap-list {
     display: flex;
     flex-direction: column;
-    position: relative;
-    margin-left: 1rem;
+    gap: 1.5rem;
 }
 
-/* Вертикальная линия */
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: -0.5rem;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, #ff6600, #333, #222);
-    border-radius: 3px;
-    box-shadow: 0 0 6px rgba(255,102,0,0.3);
-}
-
-.timeline-item {
-    margin-bottom: 2rem;
-    position: relative;
+.roadmap-item {
+    background: #111;
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    border-left: 4px solid #333;
+    transition: all 0.3s;
     animation: fadeInUp 0.5s ease-out backwards;
-    padding-left: 1.2rem;
 }
 
-.timeline-item:nth-last-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-last-child(2) { animation-delay: 0.15s; }
-.timeline-item:nth-last-child(3) { animation-delay: 0.2s; }
-.timeline-item:nth-last-child(4) { animation-delay: 0.25s; }
-.timeline-item:nth-last-child(5) { animation-delay: 0.3s; }
-.timeline-item:nth-last-child(6) { animation-delay: 0.35s; }
+.roadmap-item:nth-child(1) { animation-delay: 0.1s; }
+.roadmap-item:nth-child(2) { animation-delay: 0.15s; }
+.roadmap-item:nth-child(3) { animation-delay: 0.2s; }
+.roadmap-item:nth-child(4) { animation-delay: 0.25s; }
+.roadmap-item:nth-child(5) { animation-delay: 0.3s; }
+.roadmap-item:nth-child(6) { animation-delay: 0.35s; }
 
 @keyframes fadeInUp {
     from {
@@ -318,70 +297,60 @@ h3 {
     }
 }
 
-.timeline-content {
-    background: rgba(17, 17, 17, 0.8);
-    backdrop-filter: blur(2px);
-    padding: 1rem 1.2rem;
-    border-radius: 1rem;
-    flex: 1;
-    border: 1px solid #2a2a2a;
-    transition: all 0.3s;
-}
-
-.timeline-content h4 {
+.roadmap-item h4 {
     font-size: 1.2rem;
     margin-bottom: 0.4rem;
-    font-weight: 700;
     color: #eee;
 }
 
-.timeline-content p {
+.roadmap-item p {
     color: #bbb;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
-.timeline-date {
+.roadmap-date {
     font-size: 0.7rem;
     color: #777;
     font-family: monospace;
     letter-spacing: 0.5px;
 }
 
-/* Текущий этап (оранжевый) */
-.timeline-item.current .timeline-content {
-    border-color: #ff6600;
-    background: linear-gradient(135deg, rgba(255,102,0,0.1), rgba(17,17,17,0.9));
-    box-shadow: 0 0 12px rgba(255,102,0,0.2);
+/* Текущий этап (оранжевая левая граница и лёгкая подсветка) */
+.roadmap-item.current {
+    border-left-color: #ff6600;
+    background: linear-gradient(135deg, rgba(255,102,0,0.1), #111);
+    box-shadow: 0 0 8px rgba(255,102,0,0.2);
 }
-.timeline-item.current .timeline-content h4 {
+.roadmap-item.current h4 {
     color: #ffaa66;
-    text-shadow: 0 0 4px rgba(255,102,0,0.4);
+    text-shadow: 0 0 4px rgba(255,102,0,0.3);
 }
 
-/* Следующий этап (отмечен) */
-.timeline-item.next .timeline-content {
-    border-color: #cc8800;
-    background: rgba(204,136,0,0.05);
+/* Следующий этап (золотая граница) */
+.roadmap-item.next {
+    border-left-color: #cc8800;
+    background: rgba(204,136,0,0.03);
 }
-.timeline-item.next .timeline-content h4 {
+.roadmap-item.next h4 {
     color: #ffcc66;
 }
 
-/* Прошедшие этапы */
-.timeline-item.past .timeline-content {
+/* Прошедшие этапы (серая граница, легкое затемнение текста) */
+.roadmap-item.past {
+    border-left-color: #444;
     opacity: 0.8;
 }
-.timeline-item.past .timeline-content p {
+.roadmap-item.past p {
     color: #888;
 }
 
 /* Будущие этапы */
-.timeline-item.future .timeline-content {
-    border-color: #2a2a2a;
-    background: #0f0f0f;
+.roadmap-item.future {
+    border-left-color: #2a2a2a;
+    background: #0a0a0a;
 }
-.timeline-item.future .timeline-content h4 {
+.roadmap-item.future h4 {
     color: #999;
 }
 
@@ -407,22 +376,13 @@ h3 {
         padding: 1rem;
     }
     /* Roadmap адаптация */
-    .timeline {
-        margin-left: 0;
+    .roadmap-item {
+        padding: 0.8rem 1rem;
     }
-    .timeline::before {
-        left: 0;
-    }
-    .timeline-item {
-        padding-left: 0.8rem;
-    }
-    .timeline-content {
-        padding: 0.7rem 1rem;
-    }
-    .timeline-content h4 {
+    .roadmap-item h4 {
         font-size: 1rem;
     }
-    .timeline-content p {
+    .roadmap-item p {
         font-size: 0.8rem;
     }
 }
@@ -434,4 +394,4 @@ footer {
     font-size: 0.8rem;
     border-top: 1px solid #222;
     padding-top: 1.5rem;
-}
+    }
