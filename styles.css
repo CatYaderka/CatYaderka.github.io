@@ -9,7 +9,7 @@ body {
     background: #0a0a0a;
     color: #ddd;
     line-height: 1.6;
-    padding: 2rem 1rem;
+    padding: 1rem;
 }
 
 .container {
@@ -17,381 +17,293 @@ body {
     margin: 0 auto;
     background: #0d0d0d;
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 1.5rem;
     border: 1px solid #222;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.6s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* Профиль */
 .profile {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #222;
 }
-
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #ff6600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s;
 }
-
 .avatar:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255,102,0,0.4);
 }
-
 .avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .profile-info h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, #ffaa66 100%);
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #fff, #ffaa66);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
-
 .profile-info h2 {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1rem;
     color: #ff6600;
 }
-
 .bio {
     color: #aaa;
-    margin-top: 0.3rem;
+    font-size: 0.85rem;
 }
-
-/* Социальные ссылки */
 .social-links {
     display: flex;
-    gap: 1rem;
-    margin-top: 0.75rem;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
 }
-
 .social-icon {
     color: #aaa;
-    font-size: 1.5rem;
-    transition: all 0.2s ease;
+    font-size: 1.3rem;
+    transition: 0.2s;
 }
-
 .social-icon:hover {
     color: #ff6600;
     transform: translateY(-3px);
-    text-shadow: 0 0 8px rgba(255,102,0,0.5);
 }
 
 /* Навигация */
 .main-nav {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid #222;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
 }
-
 .main-nav a {
     color: #aaa;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: 0.2s;
+}
+.main-nav a:hover, .main-nav a.active {
+    color: #ff6600;
+}
+.main-nav a.active {
     position: relative;
 }
-
-.main-nav a:hover,
-.main-nav a.active {
-    color: #ff6600;
-    text-shadow: 0 0 6px rgba(255,102,0,0.3);
-}
-
 .main-nav a.active::after {
     content: '';
     position: absolute;
-    bottom: -0.75rem;
+    bottom: -0.5rem;
     left: 0;
     width: 100%;
     height: 2px;
     background: #ff6600;
-    animation: slideIn 0.3s ease-out;
     box-shadow: 0 0 6px #ff6600;
-}
-
-@keyframes slideIn {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-    to {
-        width: 100%;
-        opacity: 1;
-    }
 }
 
 /* Заголовки */
 h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
     color: #ff6600;
-    border-left: 4px solid #ff6600;
-    padding-left: 1rem;
-    text-shadow: 0 0 6px rgba(255,102,0,0.3);
+    border-left: 3px solid #ff6600;
+    padding-left: 0.8rem;
 }
-
 .glow-text {
     color: #ffaa66;
-    text-shadow: 0 0 8px rgba(255,170,0,0.5);
+    text-shadow: 0 0 5px rgba(255,170,0,0.5);
 }
 
-/* Карточка проекта (Bleed Control) */
+/* Карточка проекта */
 .single-project {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 100%;
 }
-
 .project-card.expanded {
     background: #111;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     overflow: hidden;
     border: 1px solid #222;
-    transition: 0.3s;
 }
-
 .project-card.expanded .project-image {
-    height: 300px;
-    overflow: hidden;
+    height: 200px;
 }
-
 .project-card.expanded .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s;
 }
-
-.project-card.expanded:hover .project-image img {
-    transform: scale(1.05);
-}
-
 .project-card.expanded .project-info {
-    padding: 1.8rem;
+    padding: 1rem;
 }
-
 .project-tagline {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #ffaa66;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    border-left: 3px solid #ff6600;
-    padding-left: 1rem;
+    border-left: 2px solid #ff6600;
+    padding-left: 0.6rem;
+    margin-bottom: 0.8rem;
 }
-
 .feature-list {
     list-style: none;
-    padding-left: 0;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
-
 .feature-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    font-size: 0.85rem;
     position: relative;
-    color: #ccc;
 }
-
 .feature-list li::before {
     content: "▹";
     position: absolute;
     left: 0;
     color: #ff6600;
 }
-
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin: 0.8rem 0;
 }
-
 .tech-tags span {
     background: #1f1f1f;
-    padding: 0.2rem 0.7rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 2rem;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.65rem;
     color: #ffaa66;
-    border: 1px solid #2a2a2a;
-    transition: 0.2s;
 }
-
-.project-status {
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
 .status-badge {
-    background: linear-gradient(135deg, #ff6600, #ff3300);
+    background: #ff6600;
     color: #0a0a0a;
-    padding: 0.4rem 1.2rem;
+    padding: 0.3rem 1rem;
     border-radius: 2rem;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-size: 0.7rem;
     display: inline-block;
-    box-shadow: 0 0 10px rgba(255,102,0,0.3);
 }
 
-/* ROAD MAP — без полоски и маркеров, просто список */
+/* Road Map — карточки */
 .roadmap-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
-
 .roadmap-item {
     background: #111;
-    border-radius: 1rem;
-    padding: 1.2rem 1.5rem;
-    border-left: 4px solid #333;
-    transition: all 0.3s;
-    animation: fadeInUp 0.5s ease-out backwards;
+    border-radius: 0.8rem;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid #333;
+    transition: 0.2s;
+    animation: fadeInUp 0.4s ease-out backwards;
 }
-
-.roadmap-item:nth-child(1) { animation-delay: 0.1s; }
-.roadmap-item:nth-child(2) { animation-delay: 0.15s; }
-.roadmap-item:nth-child(3) { animation-delay: 0.2s; }
-.roadmap-item:nth-child(4) { animation-delay: 0.25s; }
-.roadmap-item:nth-child(5) { animation-delay: 0.3s; }
-.roadmap-item:nth-child(6) { animation-delay: 0.35s; }
+.roadmap-item:nth-child(1) { animation-delay: 0.05s; }
+.roadmap-item:nth-child(2) { animation-delay: 0.1s; }
+.roadmap-item:nth-child(3) { animation-delay: 0.15s; }
+.roadmap-item:nth-child(4) { animation-delay: 0.2s; }
+.roadmap-item:nth-child(5) { animation-delay: 0.25s; }
+.roadmap-item:nth-child(6) { animation-delay: 0.3s; }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 .roadmap-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
     color: #eee;
 }
-
 .roadmap-item p {
+    font-size: 0.8rem;
     color: #bbb;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
-
 .roadmap-date {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: #777;
-    font-family: monospace;
-    letter-spacing: 0.5px;
 }
-
-/* Текущий этап (оранжевая левая граница и лёгкая подсветка) */
+/* Цветовые состояния */
 .roadmap-item.current {
     border-left-color: #ff6600;
-    background: linear-gradient(135deg, rgba(255,102,0,0.1), #111);
-    box-shadow: 0 0 8px rgba(255,102,0,0.2);
+    background: rgba(255,102,0,0.08);
 }
 .roadmap-item.current h4 {
     color: #ffaa66;
-    text-shadow: 0 0 4px rgba(255,102,0,0.3);
 }
-
-/* Следующий этап (золотая граница) */
 .roadmap-item.next {
     border-left-color: #cc8800;
-    background: rgba(204,136,0,0.03);
+    background: rgba(204,136,0,0.04);
 }
 .roadmap-item.next h4 {
     color: #ffcc66;
 }
-
-/* Прошедшие этапы (серая граница, легкое затемнение текста) */
 .roadmap-item.past {
     border-left-color: #444;
     opacity: 0.8;
 }
-.roadmap-item.past p {
-    color: #888;
-}
-
-/* Будущие этапы */
 .roadmap-item.future {
     border-left-color: #2a2a2a;
-    background: #0a0a0a;
-}
-.roadmap-item.future h4 {
-    color: #999;
 }
 
-/* Адаптация под телефоны */
+/* Адаптация под телефоны (главное) */
 @media (max-width: 700px) {
+    body {
+        padding: 0.5rem;
+    }
     .container {
         padding: 1rem;
     }
     .profile {
-        flex-direction: column;
+        justify-content: center;
         text-align: center;
+        gap: 0.8rem;
+    }
+    .profile-info h1 {
+        font-size: 1.3rem;
     }
     .main-nav {
         justify-content: center;
     }
-    .social-links {
-        justify-content: center;
-    }
     .project-card.expanded .project-image {
-        height: 200px;
+        height: 160px;
     }
     .project-card.expanded .project-info {
-        padding: 1rem;
+        padding: 0.8rem;
     }
-    /* Roadmap адаптация */
+    .feature-list li {
+        font-size: 0.8rem;
+    }
     .roadmap-item {
-        padding: 0.8rem 1rem;
+        padding: 0.7rem;
     }
     .roadmap-item h4 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     .roadmap-item p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
 footer {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     text-align: center;
     color: #555;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     border-top: 1px solid #222;
-    padding-top: 1.5rem;
-    }
+    padding-top: 1rem;
+}
