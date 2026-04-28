@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Все проекты — CatYaderka</title>
+    <title>Bleed Control — подробно | CatYaderka</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -17,7 +17,7 @@
                 <div class="profile-info">
                     <h1>Костин Семён Денисович</h1>
                     <h2>@CatYaderka</h2>
-                    <p class="bio">C++ / C# разработчик | s&box | Тактические шутеры</p>
+                    <p class="bio">Разработчик Bleed Control | C# / s&box | C++ для сетевых систем</p>
                     <div class="social-links">
                         <a href="https://github.com/CatYaderka" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="https://t.me/CatYaderka" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
@@ -31,66 +31,49 @@
         </header>
 
         <section class="projects">
-            <h3>Все проекты</h3>
-            <div class="projects-grid">
-
-                <div class="project-card" id="bleed">
+            <h3>Bleed Control — полное описание проекта</h3>
+            <div class="single-project">
+                <div class="project-card expanded">
                     <div class="project-image">
                         <img src="assets/projects/bleed-control.jpg" alt="Bleed Control">
                     </div>
                     <div class="project-info">
                         <h4>Bleed Control</h4>
-                        <p>Тактический шутер 5x5 в стиле найденных кадров. Никакого HUD — только вид от первого лица. При попадании мир распадается: галлюцинации, ASMR-звуки, кровь на объективе.</p>
-                        <ul>
-                            <li>🎥 Bodycam-камера</li>
-                            <li>🩸 Галлюцинации от потери крови</li>
-                            <li>🎧 ASMR ужаса: дыхание, сердце, рация</li>
+                        <p class="project-tagline">Тактический шутер 5x5 в стиле найденных кадров. Никакого HUD.</p>
+                        
+                        <h5>Концепция</h5>
+                        <p>Игра переворачивает классическую формулу CS: закладка бомбы / зачистка точек. Каждая перестрелка — травматический опыт. При попадании мир распадается: кровь заливает объектив, начинаются галлюцинации.</p>
+                        
+                        <h5>Ключевые механики</h5>
+                        <ul class="feature-list">
+                            <li><strong>Bodycam-режим</strong>: полное отсутствие интерфейса — ни прицела, ни мини-карты, ни счётчика патронов. Всё, что вы видите — это руки с оружием и окружающая среда.</li>
+                            <li><strong>Система кровотечения</strong>: ранения влияют на зрение, слух и движение. Потеря крови вызывает визуальные искажения (ложные цели, мерцание) и слуховые галлюцинации (шаги за спиной, голоса).</li>
+                            <li><strong>ASMR-звуковой дизайн</strong>: хриплое дыхание игрока, стук сердца, хруст стекла под ногами, панические крики по рации — всё записано с реалистичным бинауральным эффектом.</li>
+                            <li><strong>Тактический геймплей 5х5</strong>: одна-две пули убивают. Нет хил-механик. Выживание зависит от осторожности и командной работы.</li>
                         </ul>
+                        
+                        <h5>Технологии</h5>
                         <div class="tech-tags">
                             <span>C#</span>
                             <span>s&box</span>
                             <span>Source 2</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" id="netcore">
-                    <div class="project-image">
-                        <img src="assets/projects/project-cpp.jpg" alt="C++ Networking">
-                    </div>
-                    <div class="project-info">
-                        <h4>NetCore: C++ Server</h4>
-                        <p>Многопоточный сетевой движок для тактических игр. Поддержка UDP + надёжная доставка, репликация объектов, сниффинг пакетов.</p>
-                        <div class="tech-tags">
-                            <span>C++17</span>
-                            <span>Asio</span>
-                            <span>UDP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ШАБЛОН ДЛЯ НОВОГО ПРОЕКТА (раскомментируй и заполни) -->
-                <!-- 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/projects/новый.jpg" alt="Новый проект">
-                    </div>
-                    <div class="project-info">
-                        <h4>Название проекта</h4>
-                        <p>Описание проекта. Что делает, какие технологии.</p>
-                        <div class="tech-tags">
                             <span>C++</span>
-                            <span>s&box</span>
+                        </div>
+                        <p class="tech-note">Сетевой код и серверная логика частично реализованы на C++ для максимальной производительности.</p>
+                        
+                        <h5>Статус</h5>
+                        <p>Активная разработка. Планируется закрытое альфа-тестирование в 2026 году.</p>
+                        
+                        <div class="project-status">
+                            <span class="status-badge">В разработке</span>
                         </div>
                     </div>
                 </div>
-                -->
-
             </div>
         </section>
 
         <footer>
-            <p>© 2026 CatYaderka — больше проектов скоро</p>
+            <p>© 2026 CatYaderka — Bleed Control. Все права защищены.</p>
         </footer>
     </div>
 </body>

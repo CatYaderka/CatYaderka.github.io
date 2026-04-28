@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatYaderka | C++ / s&box разработчик</title>
+    <title>CatYaderka | Bleed Control — тактический шутер</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,7 +18,7 @@
                 <div class="profile-info">
                     <h1>Костин Семён Денисович</h1>
                     <h2>@CatYaderka</h2>
-                    <p class="bio">C++ / C# разработчик | s&box | Тактические шутеры</p>
+                    <p class="bio">Разработчик Bleed Control | C# / s&box | C++ для сетевых систем</p>
                     <div class="social-links">
                         <a href="https://github.com/CatYaderka" target="_blank" class="social-icon" aria-label="GitHub">
                             <i class="fab fa-github"></i>
@@ -36,63 +36,43 @@
         </header>
 
         <section class="about">
-            <h3>О себе</h3>
-            <p>Программист C++ и C#. Специализируюсь на тактильных, атмосферных механиках: системы кровотечения, галлюцинации, баллистика, минималистичный HUD. Разработка на s&box (Source 2). Люблю жёсткий геймплей и нулевую UI-помощь игроку.</p>
+            <h3>О себе и Bleed Control</h3>
+            <p>Я — независимый разработчик, создающий <strong>Bleed Control</strong> — тактический шутер 5x5 в стиле найденных кадров. Моя специализация — атмосферные механики, минималистичный HUD (его полное отсутствие), системы кровотечения и галлюцинаций. Пишу на <strong>C#</strong> под движок s&box (Source 2), а также использую <strong>C++</strong> для разработки сетевых бэкендов и инструментов. Всё внимание — только одной игре, которая переворачивает жанр tactical shooter.</p>
         </section>
 
         <section class="projects">
-            <h3>Последние проекты</h3>
-            <div class="projects-grid">
-                
-                <div class="project-card">
+            <h3>Текущий проект</h3>
+            <div class="single-project">
+                <div class="project-card expanded">
                     <div class="project-image">
                         <img src="assets/projects/bleed-control.jpg" alt="Bleed Control">
                     </div>
                     <div class="project-info">
                         <h4>Bleed Control</h4>
-                        <p>Тактический шутер 5x5 в стиле найденных кадров. Никакого HUD — только камера, винтовка и кровь.</p>
+                        <p class="project-tagline">Тактический шутер 5x5 в стиле найденных кадров. Никакого HUD — только ты, винтовка и чувство, что за тобой кто-то есть.</p>
+                        <p>Самое страшное — не враг. Это твоя собственная кровь на объективе нательной камеры. Игра переворачивает классическую формулу CS: закладка бомбы / зачистка точек. Теперь каждая перестрелка — это травматический опыт. Когда в тебя попадают, мир начинает распадаться.</p>
+                        <ul class="feature-list">
+                            <li>🎥 <strong>Режим камеры Bodycam</strong> — никакого HUD, только вид от первого лица</li>
+                            <li>🩸 <strong>Боль искажает разум</strong> — от потери крови начинаются слуховые и визуальные галлюцинации (ложные цели, голоса)</li>
+                            <li>🎧 <strong>ASMR ужаса</strong> — собственное хриплое дыхание, стук сердца, хруст шагов по стеклу и крики раненых по рации</li>
+                            <li>🎯 <strong>Чистый тактический геймплей 5х5</strong>. Одна-две пули убивают. Но гораздо страшнее — выжить и ослепнуть от собственной крови.</li>
+                        </ul>
                         <div class="tech-tags">
                             <span>C#</span>
                             <span>s&box</span>
+                            <span>Source 2</span>
+                            <span>C++ (сеть)</span>
                         </div>
-                        <a href="projects.html#bleed" class="card-link">подробнее →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/projects/project-cpp.jpg" alt="C++ Networking Engine">
-                    </div>
-                    <div class="project-info">
-                        <h4>NetCore: C++ Server</h4>
-                        <p>Многопоточный сетевой движок для тактических игр. UDP + надёжная доставка.</p>
-                        <div class="tech-tags">
-                            <span>C++</span>
-                            <span>Asio</span>
+                        <div class="project-status">
+                            <span class="status-badge">В активной разработке</span>
                         </div>
-                        <a href="projects.html#netcore" class="card-link">подробнее →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/projects/placeholder.jpg" alt="Новый проект">
-                    </div>
-                    <div class="project-info">
-                        <h4>Новый проект</h4>
-                        <p>Здесь скоро появится ещё одна игра или инструмент на C++ / C#.</p>
-                        <div class="tech-tags">
-                            <span>C++</span>
-                            <span>C#</span>
-                        </div>
-                        <a href="projects.html" class="card-link">будет добавлен →</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>© 2026 CatYaderka — C++ / s&box</p>
+            <p>© 2026 CatYaderka — Bleed Control | Тактический шутер без интерфейса</p>
         </footer>
     </div>
 </body>
