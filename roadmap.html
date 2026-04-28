@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Road Map — Bleed Control | CatYaderka</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -31,69 +31,75 @@
         </header>
 
         <section class="roadmap">
-            <h3>План разработки Bleed Control</h3>
-            <div class="timeline">
-                <!-- Этапы идут снизу вверх -->
-                
-                <!-- Этап 6: верхний (будущий) -->
-                <div class="timeline-item future">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Релиз (2027)</h4>
-                        <p>Полный релиз в Steam, поддержка, пост-релизный контент.</p>
+            <h3>План разработки <span class="glow-text">Bleed Control</span></h3>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <!-- Этап 6: Релиз (будущий) -->
+                    <div class="timeline-item future">
+                        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="timeline-content">
+                            <h4>Релиз в Steam</h4>
+                            <p>Полный релиз, поддержка, сезонный контент, рейтинговые матчи</p>
+                            <span class="timeline-date">2027</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Этап 5: следующий (отмечен) -->
-                <div class="timeline-item next">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Закрытое бета-тестирование</h4>
-                        <p>Приглашённые игроки, отладка сетевой игры, финальные балансировки.</p>
+                    
+                    <!-- Этап 5: Бета (следующий, отмечен) -->
+                    <div class="timeline-item next">
+                        <div class="timeline-icon"><i class="fas fa-users"></i></div>
+                        <div class="timeline-content">
+                            <h4>Закрытое бета-тестирование</h4>
+                            <p>Приглашённые игроки, отладка сетевой игры, финальный баланс, полировка</p>
+                            <span class="timeline-date">2026 — 2027</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Этап 4: текущий (оранжевый) -->
-                <div class="timeline-item current">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Альфа-тестирование</h4>
-                        <p>Активная фаза: тестирование галлюцинаций, bodycam, ASMR-звуков. Оптимизация.</p>
+                    
+                    <!-- Этап 4: Альфа (текущий, оранжевый) -->
+                    <div class="timeline-item current">
+                        <div class="timeline-icon"><i class="fas fa-flask"></i></div>
+                        <div class="timeline-content">
+                            <h4>Альфа-тестирование</h4>
+                            <p>Тестирование галлюцинаций, bodycam, ASMR-звуков. Оптимизация производительности</p>
+                            <span class="timeline-date">2026</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Этап 3 -->
-                <div class="timeline-item past">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Разработка сетевой основы</h4>
-                        <p>Создание серверной логики на C#, синхронизация 5x5, репликация.</p>
+                    
+                    <!-- Этап 3: Сетевая основа -->
+                    <div class="timeline-item past">
+                        <div class="timeline-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="timeline-content">
+                            <h4>Сетевая архитектура</h4>
+                            <p>Создание серверной логики на C#, синхронизация 5x5, репликация, античит</p>
+                            <span class="timeline-date">2025 — 2026</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Этап 2 -->
-                <div class="timeline-item past">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Прототип механик</h4>
-                        <p>Реализация стрельбы, кровотечения, базовых галлюцинаций.</p>
+                    
+                    <!-- Этап 2: Прототип -->
+                    <div class="timeline-item past">
+                        <div class="timeline-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <div class="timeline-content">
+                            <h4>Прототип механик</h4>
+                            <p>Стрельба, кровотечение, базовые галлюцинации, звуковой дизайн</p>
+                            <span class="timeline-date">2025</span>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Этап 1: самый нижний -->
-                <div class="timeline-item past">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Концепция и дизайн</h4>
-                        <p>Разработка идеи "найденных кадров", написание GDD, создание moodboard.</p>
+                    
+                    <!-- Этап 1: Концепция (самый нижний) -->
+                    <div class="timeline-item past">
+                        <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="timeline-content">
+                            <h4>Концепция и дизайн</h4>
+                            <p>Разработка идеи "найденных кадров", написание GDD, создание moodboard</p>
+                            <span class="timeline-date">2024</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>© 2026 CatYaderka — Bleed Control | Road Map</p>
+            <p>© 2026 CatYaderka — Bleed Control. Дорожная карта развития</p>
         </footer>
     </div>
 </body>
-  </html>
+                                                 </html>
