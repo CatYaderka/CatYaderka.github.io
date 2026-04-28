@@ -7,7 +7,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background: #0a0a0a;
-    color: #eee;
+    color: #ddd; /* не чисто белый */
     line-height: 1.6;
     padding: 2rem 1rem;
 }
@@ -34,7 +34,7 @@ body {
     }
 }
 
-/* ========== ПРОФИЛЬ ========== */
+/* Профиль */
 .profile {
     display: flex;
     align-items: center;
@@ -68,7 +68,10 @@ body {
 .profile-info h1 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #fff;
+    background: linear-gradient(135deg, #fff 0%, #ffaa66 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .profile-info h2 {
@@ -82,7 +85,7 @@ body {
     margin-top: 0.3rem;
 }
 
-/* Социальные ссылки */
+/* Соцсети */
 .social-links {
     display: flex;
     gap: 1rem;
@@ -98,9 +101,10 @@ body {
 .social-icon:hover {
     color: #ff6600;
     transform: translateY(-3px);
+    text-shadow: 0 0 8px rgba(255,102,0,0.5);
 }
 
-/* ========== НАВИГАЦИЯ ========== */
+/* Навигация */
 .main-nav {
     display: flex;
     gap: 1.5rem;
@@ -120,6 +124,7 @@ body {
 .main-nav a:hover,
 .main-nav a.active {
     color: #ff6600;
+    text-shadow: 0 0 6px rgba(255,102,0,0.3);
 }
 
 .main-nav a.active::after {
@@ -131,6 +136,7 @@ body {
     height: 2px;
     background: #ff6600;
     animation: slideIn 0.3s ease-out;
+    box-shadow: 0 0 6px #ff6600;
 }
 
 @keyframes slideIn {
@@ -144,151 +150,49 @@ body {
     }
 }
 
-/* ========== ЗАГОЛОВКИ ========== */
+/* Заголовки */
 h3 {
     font-size: 1.6rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     color: #ff6600;
     border-left: 4px solid #ff6600;
     padding-left: 1rem;
+    text-shadow: 0 0 6px rgba(255,102,0,0.3);
 }
 
-h5 {
-    font-size: 1.2rem;
-    margin: 1.2rem 0 0.5rem 0;
-    color: #ff6600;
+.glow-text {
+    color: #ffaa66;
+    text-shadow: 0 0 8px rgba(255,170,0,0.5);
 }
 
-/* ========== СЕТКА ПРОЕКТОВ (для нескольких карточек) ========== */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.8rem;
-    margin-top: 1rem;
-}
-
-/* ========== КАРТОЧКА ПРОЕКТА (стандартная) ========== */
-.project-card {
-    background: #111;
-    border-radius: 1.2rem;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    border: 1px solid #222;
-    animation: fadeInUp 0.5s ease-out backwards;
-}
-
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.project-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    border-color: #ff6600;
-    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.15);
-}
-
-.project-image {
-    height: 170px;
-    overflow: hidden;
-    background: #1a1a1a;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-.project-info {
-    padding: 1.2rem;
-}
-
-.project-info h4 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
-
-.project-info p {
-    font-size: 0.9rem;
-    color: #bbb;
-    margin-bottom: 1rem;
-}
-
-.project-info ul {
-    margin: 0.5rem 0 1rem 1.2rem;
-    color: #ccc;
-    font-size: 0.85rem;
-}
-
-/* ========== ТЕГИ ТЕХНОЛОГИЙ ========== */
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.tech-tags span {
-    background: #1f1f1f;
-    padding: 0.2rem 0.7rem;
-    border-radius: 2rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #ff6600;
-    border: 1px solid #2a2a2a;
-    transition: 0.2s;
-}
-
-.tech-tags span:hover {
-    background: #2a2a2a;
-    transform: translateY(-1px);
-}
-
-/* ========== ССЫЛКА "ПОДРОБНЕЕ" ========== */
-.card-link {
-    color: #ff6600;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: 0.2s;
-    display: inline-block;
-}
-
-.card-link:hover {
-    text-decoration: underline;
-    transform: translateX(4px);
-}
-
-/* ========== РАСШИРЕННАЯ КАРТОЧКА (ДЛЯ BLEED CONTROL) ========== */
+/* Карточка проекта (Bleed Control) */
 .single-project {
     max-width: 900px;
     margin: 0 auto;
 }
 
 .project-card.expanded {
-    display: flex;
-    flex-direction: column;
+    background: #111;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
 .project-card.expanded .project-image {
     height: 300px;
+    overflow: hidden;
+}
+
+.project-card.expanded .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.project-card.expanded:hover .project-image img {
+    transform: scale(1.05);
 }
 
 .project-card.expanded .project-info {
@@ -297,7 +201,7 @@ h5 {
 
 .project-tagline {
     font-size: 1.1rem;
-    color: #ff6600;
+    color: #ffaa66;
     font-weight: 500;
     margin-bottom: 1rem;
     border-left: 3px solid #ff6600;
@@ -314,6 +218,7 @@ h5 {
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
+    color: #ccc;
 }
 
 .feature-list li::before {
@@ -323,13 +228,31 @@ h5 {
     color: #ff6600;
 }
 
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tags span {
+    background: #1f1f1f;
+    padding: 0.2rem 0.7rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #ffaa66;
+    border: 1px solid #2a2a2a;
+    transition: 0.2s;
+}
+
 .project-status {
     margin-top: 1.5rem;
     text-align: center;
 }
 
 .status-badge {
-    background: #ff6600;
+    background: linear-gradient(135deg, #ff6600, #ff3300);
     color: #0a0a0a;
     padding: 0.4rem 1.2rem;
     border-radius: 2rem;
@@ -337,15 +260,217 @@ h5 {
     font-size: 0.8rem;
     letter-spacing: 0.5px;
     display: inline-block;
+    box-shadow: 0 0 10px rgba(255,102,0,0.3);
 }
 
-.tech-note {
-    font-size: 0.85rem;
+/* ROAD MAP — новая стилизация */
+.roadmap h3 {
+    margin-bottom: 2rem;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 2rem;
+}
+
+/* Линия времени вертикальная */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #ff6600, #333, #222);
+    border-radius: 3px;
+    box-shadow: 0 0 6px rgba(255,102,0,0.3);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.timeline-item:nth-last-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-last-child(2) { animation-delay: 0.15s; }
+.timeline-item:nth-last-child(3) { animation-delay: 0.2s; }
+.timeline-item:nth-last-child(4) { animation-delay: 0.25s; }
+.timeline-item:nth-last-child(5) { animation-delay: 0.3s; }
+.timeline-item:nth-last-child(6) { animation-delay: 0.35s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-icon {
+    width: 48px;
+    height: 48px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    z-index: 2;
+    border: 2px solid #333;
+    transition: 0.2s;
+}
+
+.timeline-icon i {
+    font-size: 1.3rem;
     color: #aaa;
-    margin-top: 0.5rem;
 }
 
-/* ========== ПОДВАЛ ========== */
+.timeline-content {
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(2px);
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    flex: 1;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: #eee;
+}
+
+.timeline-content p {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+    font-size: 0.7rem;
+    color: #777;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Текущий этап (оранжевый с эффектом свечения) */
+.timeline-item.current .timeline-icon {
+    background: #ff6600;
+    border-color: #ffaa66;
+    box-shadow: 0 0 15px #ff6600;
+}
+.timeline-item.current .timeline-icon i {
+    color: #0a0a0a;
+}
+.timeline-item.current .timeline-content {
+    border-color: #ff6600;
+    background: linear-gradient(135deg, rgba(255,102,0,0.1), rgba(17,17,17,0.9));
+    box-shadow: 0 0 15px rgba(255,102,0,0.2);
+}
+.timeline-item.current .timeline-content h4 {
+    color: #ffaa66;
+    text-shadow: 0 0 4px rgba(255,102,0,0.4);
+}
+
+/* Следующий этап (отмечен) */
+.timeline-item.next .timeline-icon {
+    background: #cc8800;
+    border-color: #ffcc44;
+    box-shadow: 0 0 8px rgba(255,204,0,0.5);
+}
+.timeline-item.next .timeline-icon i {
+    color: #0a0a0a;
+}
+.timeline-item.next .timeline-content {
+    border-color: #cc8800;
+    background: rgba(204,136,0,0.05);
+}
+.timeline-item.next .timeline-content h4 {
+    color: #ffcc66;
+}
+
+/* Прошедшие этапы (серые, но текст не белый) */
+.timeline-item.past .timeline-icon {
+    background: #2a2a2a;
+    border-color: #444;
+}
+.timeline-item.past .timeline-icon i {
+    color: #666;
+}
+.timeline-item.past .timeline-content {
+    opacity: 0.8;
+}
+.timeline-item.past .timeline-content p {
+    color: #888;
+}
+
+/* Будущие этапы (более тёмные) */
+.timeline-item.future .timeline-icon {
+    background: #1a1a1a;
+    border-color: #333;
+}
+.timeline-item.future .timeline-icon i {
+    color: #555;
+}
+.timeline-item.future .timeline-content {
+    border-color: #2a2a2a;
+    background: #0f0f0f;
+}
+.timeline-item.future .timeline-content h4 {
+    color: #999;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .container {
+        padding: 1rem;
+    }
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav {
+        justify-content: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .timeline {
+        margin-left: 0;
+    }
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-icon {
+        width: 36px;
+        height: 36px;
+        margin-right: 1rem;
+    }
+    .timeline-icon i {
+        font-size: 1rem;
+    }
+    .timeline-content {
+        padding: 0.8rem 1rem;
+    }
+    .project-card.expanded .project-image {
+        height: 200px;
+    }
+}
+
 footer {
     margin-top: 2.5rem;
     text-align: center;
@@ -353,186 +478,4 @@ footer {
     font-size: 0.8rem;
     border-top: 1px solid #222;
     padding-top: 1.5rem;
-}
-
-/* ========== АДАПТИВНОСТЬ ========== */
-@media (max-width: 700px) {
-    .container {
-        padding: 1rem;
-    }
-    
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-nav {
-        justify-content: center;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .project-card.expanded .project-image {
-        height: 200px;
-    }
-    
-    .project-card.expanded .project-info {
-        padding: 1.2rem;
-    }
-    
-    h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* ========== ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ ========== */
-
-/* Лёгкое свечение для оранжевых элементов */
-.status-badge, .tech-tags span, .main-nav a.active {
-    transition: all 0.2s ease;
-}
-
-/* Плавный скролл */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Выделение текста в оранжевый цвет */
-::selection {
-    background: #ff6600;
-    color: #0a0a0a;
-}
-
-::-moz-selection {
-    background: #ff6600;
-    color: #0a0a0a;
-}
-
-/* Roadmap стили */
-.roadmap h3 {
-    margin-bottom: 2rem;
-}
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 2rem 0;
-}
-
-/* Линия времени */
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #333;
-}
-
-.timeline-item {
-    display: flex;
-    margin-bottom: 2rem;
-    position: relative;
-    animation: fadeInUp 0.4s ease-out backwards;
-}
-
-.timeline-item:nth-last-child(1) { animation-delay: 0.05s; }
-.timeline-item:nth-last-child(2) { animation-delay: 0.1s; }
-.timeline-item:nth-last-child(3) { animation-delay: 0.15s; }
-.timeline-item:nth-last-child(4) { animation-delay: 0.2s; }
-.timeline-item:nth-last-child(5) { animation-delay: 0.25s; }
-.timeline-item:nth-last-child(6) { animation-delay: 0.3s; }
-
-.timeline-marker {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #555;
-    margin-right: 1.5rem;
-    margin-left: 12px;
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-}
-
-.timeline-content {
-    background: #111;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
-    flex: 1;
-    border: 1px solid #222;
-    transition: 0.2s;
-}
-
-.timeline-content h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.timeline-content p {
-    color: #bbb;
-    font-size: 0.9rem;
-}
-
-/* Текущий этап (оранжевый) */
-.timeline-item.current .timeline-marker {
-    background: #ff6600;
-    box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.3);
-}
-
-.timeline-item.current .timeline-content {
-    border-color: #ff6600;
-    background: rgba(255, 102, 0, 0.05);
-}
-
-.timeline-item.current .timeline-content h4 {
-    color: #ff6600;
-}
-
-/* Следующий этап (отмечен) */
-.timeline-item.next .timeline-marker {
-    background: #ffaa33;
-    box-shadow: 0 0 0 2px rgba(255, 170, 51, 0.5);
-}
-
-.timeline-item.next .timeline-content {
-    border-color: #ffaa33;
-}
-
-.timeline-item.next .timeline-content h4 {
-    color: #ffaa33;
-}
-
-/* Прошедшие этапы (серые) */
-.timeline-item.past .timeline-marker {
-    background: #555;
-}
-
-.timeline-item.past .timeline-content {
-    opacity: 0.7;
-}
-
-/* Будущие этапы (серые, но без затемнения) */
-.timeline-item.future .timeline-marker {
-    background: #444;
-}
-
-.timeline-item.future .timeline-content {
-    border-color: #2a2a2a;
-}
-
-/* Адаптив */
-@media (max-width: 700px) {
-    .timeline::before {
-        left: 10px;
-    }
-    .timeline-marker {
-        margin-left: 2px;
-        margin-right: 1rem;
-    }
 }
