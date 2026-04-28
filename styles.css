@@ -409,3 +409,130 @@ html {
     background: #ff6600;
     color: #0a0a0a;
 }
+
+/* Roadmap стили */
+.roadmap h3 {
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 2rem 0;
+}
+
+/* Линия времени */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.timeline-item:nth-last-child(1) { animation-delay: 0.05s; }
+.timeline-item:nth-last-child(2) { animation-delay: 0.1s; }
+.timeline-item:nth-last-child(3) { animation-delay: 0.15s; }
+.timeline-item:nth-last-child(4) { animation-delay: 0.2s; }
+.timeline-item:nth-last-child(5) { animation-delay: 0.25s; }
+.timeline-item:nth-last-child(6) { animation-delay: 0.3s; }
+
+.timeline-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #555;
+    margin-right: 1.5rem;
+    margin-left: 12px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.timeline-content {
+    background: #111;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    flex: 1;
+    border: 1px solid #222;
+    transition: 0.2s;
+}
+
+.timeline-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* Текущий этап (оранжевый) */
+.timeline-item.current .timeline-marker {
+    background: #ff6600;
+    box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.3);
+}
+
+.timeline-item.current .timeline-content {
+    border-color: #ff6600;
+    background: rgba(255, 102, 0, 0.05);
+}
+
+.timeline-item.current .timeline-content h4 {
+    color: #ff6600;
+}
+
+/* Следующий этап (отмечен) */
+.timeline-item.next .timeline-marker {
+    background: #ffaa33;
+    box-shadow: 0 0 0 2px rgba(255, 170, 51, 0.5);
+}
+
+.timeline-item.next .timeline-content {
+    border-color: #ffaa33;
+}
+
+.timeline-item.next .timeline-content h4 {
+    color: #ffaa33;
+}
+
+/* Прошедшие этапы (серые) */
+.timeline-item.past .timeline-marker {
+    background: #555;
+}
+
+.timeline-item.past .timeline-content {
+    opacity: 0.7;
+}
+
+/* Будущие этапы (серые, но без затемнения) */
+.timeline-item.future .timeline-marker {
+    background: #444;
+}
+
+.timeline-item.future .timeline-content {
+    border-color: #2a2a2a;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-marker {
+        margin-left: 2px;
+        margin-right: 1rem;
+    }
+}
